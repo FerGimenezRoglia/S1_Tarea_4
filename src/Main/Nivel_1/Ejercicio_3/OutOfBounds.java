@@ -7,7 +7,7 @@ public class OutOfBounds {
 
     public static void giveException() {
 
-        int[] array = {1, 2, 3,4};
+        int[] array = {1, 2, 3, 4};
 
         int value = array[10]; // ----> ArrayIndexOutOfBoundsException
     }

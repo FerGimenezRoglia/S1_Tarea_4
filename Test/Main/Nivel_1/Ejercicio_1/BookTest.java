@@ -89,7 +89,7 @@ class BookTest {
         assertFalse(library.getBookList().contains(new Book("El túnel")));
     }
 
-    @DisplayName("Verifica que la lista permanece ordenada alfabéticamente después de añadir o eliminar un libro.")
+    @DisplayName("Verifica que la lista permanece ordenada alfabéticamente.")
     @Test
     public void test_8() {
 
@@ -102,17 +102,26 @@ class BookTest {
         assertEquals("El túnel", books.get(1).getTitleBook());
         assertEquals("La tortuga y el búho", books.get(2).getTitleBook());
 
-        // Añado un libro y verifico el orden
+    }
+@DisplayName("Verifica que la lista permanece ordenada alfabéticamente después de añadir un libro")
+    @Test
+    public void test_9() {
+
         library.addBook("Animales");
-        books = library.getBookList();
+        List<Book> books = library.getBookList();
         assertEquals("Animales", books.get(0).getTitleBook());
         assertEquals("El elogio de la sombra", books.get(1).getTitleBook());
         assertEquals("El túnel", books.get(2).getTitleBook());
         assertEquals("La tortuga y el búho", books.get(3).getTitleBook());
 
-        // Elimino un libro y verifico el orden
+    }
+
+@DisplayName("Verifica que la lista permanece ordenada alfabéticamente después de eliminar un libro.")
+    @Test
+    public void test_10() {
+
         library.removeBookByTitle("El túnel");
-        books = library.getBookList();
+        List<Book> books = library.getBookList();
         assertEquals("Animales", books.get(0).getTitleBook());
         assertEquals("El elogio de la sombra", books.get(1).getTitleBook());
         assertEquals("La tortuga y el búho", books.get(2).getTitleBook());
